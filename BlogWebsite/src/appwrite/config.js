@@ -1,6 +1,6 @@
 import conf from '../conf/conf.js';
 import { Client, ID, Databases, Storage, Query } from "appwrite";
-console.log(conf.appwriteProjectId)
+
 
 export class Service{
     
@@ -17,6 +17,7 @@ export class Service{
     }
 
     async createPost({title, slug, content, featuredImage, status, userId}){
+       
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
@@ -97,8 +98,6 @@ export class Service{
             return false
         }
     }
-
-    // file upload service
 
     async uploadFile(file){
         try {
